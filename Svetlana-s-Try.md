@@ -10,7 +10,10 @@ output:
 
 # Summary
 _This Rmd is an edited version of Tim's code; with my fun novice-like substitutions._
+
 I chose the data set from a Genentech study [Seshagiri et al, Nature, 2012](https://www.nature.com/articles/nature11282#Sec1) about Colorectal Adenocarcinomas (n=74). This study's main finding was that _RSPO_ (R-spondin) fusions were mutually exclusive with _APC_ mutations, indicating the former's role in Wnt signaling. The authors validated the biological activity of the R-spondin fusions using a Wnt-responsive luciferase reporter, TOPbrite.
+
+
 ![Lé Figure](/Users/Svetlana.Djirackor/Desktop/RSPO_wnt.png). 
 
 
@@ -371,7 +374,7 @@ muts %>%
 ```
 
 ```
-## [1] 0.2043978
+## [1] 0.2073963
 ```
 
 ```r
@@ -449,7 +452,7 @@ tcga_muts %>%
 ```
 
 ```
-## [1] 0.01349325
+## [1] 0.01049475
 ```
 
 ```r
@@ -682,8 +685,8 @@ sim2x2(n=nrow(muts), neither, a, b, both)
 
 ```
 ##    A  B
-## A 37  6
-## B 22  7
+## A 39  2
+## B 29  2
 ```
 
 That seems to work fine. Let's find analytic estimate for an asymptotic test (`prop.test`):
@@ -715,31 +718,31 @@ for (N in c(10, 40, 80, 100, 300, 500, 800)) {
 ```
 
 ```
-## Power at alpha = 0.05 with n = 10: 0.5%
+## Power at alpha = 0.05 with n = 10: 0.6%
 ```
 
 ```
-## Power at alpha = 0.05 with n = 40: 14.4%
+## Power at alpha = 0.05 with n = 40: 13.7%
 ```
 
 ```
-## Power at alpha = 0.05 with n = 80: 29%
+## Power at alpha = 0.05 with n = 80: 32%
 ```
 
 ```
-## Power at alpha = 0.05 with n = 100: 36.9%
+## Power at alpha = 0.05 with n = 100: 38.2%
 ```
 
 ```
-## Power at alpha = 0.05 with n = 300: 64.9%
+## Power at alpha = 0.05 with n = 300: 64.6%
 ```
 
 ```
-## Power at alpha = 0.05 with n = 500: 71.9%
+## Power at alpha = 0.05 with n = 500: 73.3%
 ```
 
 ```
-## Power at alpha = 0.05 with n = 800: 78.7%
+## Power at alpha = 0.05 with n = 800: 80.6%
 ```
 
 So what's the estimated power with a sample size of 74? 
@@ -750,7 +753,7 @@ So what's the estimated power with a sample size of 74?
 ```
 
 ```
-## Power at alpha = 0.05 with n = 74: 29.9%
+## Power at alpha = 0.05 with n = 74: 28.3%
 ```
 
 Let's add a pseudocount to the shrunken odds ratio estimator to stabilize them.
@@ -796,8 +799,9 @@ your estimates are, and therefore how trustworthy they are. That's why we bootst
 The code runs, and my understanding of it all is pretty solid until we get to simulations and power analysis. Can we walk through this in class?
 
 ## A few ideas and Questions
-I would have liked to compare the mutational data to RSPO fusion data (if this was available). 
-- How would I go about this?
-- Would I need to do a multiple comparison test at this point for _APC_, _CTNNB1_, _RSPO2_ and _RSPO3_? I started doing this but realized I really did not know how to interpret the results afterwards. I basically copied the code used [here](https://github.com/ttriche/ttriche.github.io/blob/gh-pages/WCSR/extract.md) but was lost after executing it.
-- Can we talk about the Odds Ratio section and the Estimates? And how to plot the histograms with logOrs too.
+I would have liked to compare the mutational data to RSPO fusion data (if this was available).
+
+* How would I go about this?
+* Would I need to do a multiple comparison test at this point for _APC_, _CTNNB1_, _RSPO2_ and _RSPO3_? I started doing this but realized I really did not know how to interpret the results afterwards. I basically copied the code used [here](https://github.com/ttriche/ttriche.github.io/blob/gh-pages/WCSR/extract.md) but was lost after executing it.
+* Can we talk about the Odds Ratio section and the Estimates? And how to plot the histograms with logOrs too.
 

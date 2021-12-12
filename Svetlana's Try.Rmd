@@ -458,8 +458,9 @@ your estimates are, and therefore how trustworthy they are. That's why we bootst
 The code runs, and my understanding of it all is pretty solid until we get to simulations and power analysis. Can we walk through this in class?
 
 ## A few ideas and Questions
-I would have liked to compare the mutational data to RSPO fusion data (if this was available). 
-- How would I go about this?
-- Would I need to do a multiple comparison test at this point for _APC_, _CTNNB1_, _RSPO2_ and _RSPO3_? I started doing this but realized I really did not know how to interpret the results afterwards. I basically copied the code used [here](https://github.com/ttriche/ttriche.github.io/blob/gh-pages/WCSR/extract.md) but was lost after executing it.
-- Can we talk about the Odds Ratio section and the Estimates? And how to plot the histograms with logOrs too.
+I would have liked to compare the mutational data to RSPO fusion data (if this was available).
+
+* How would I go about this?
+* Would I need to do a multiple comparison test at this point for _APC_, _CTNNB1_, _RSPO2_ and _RSPO3_? I started doing this but realized I really did not know how to interpret the results afterwards. I basically copied the code used [here](https://github.com/ttriche/ttriche.github.io/blob/gh-pages/WCSR/extract.md) but was lost after executing it.
+* Can we talk about the Odds Ratio section and the Estimates? And how to plot the histograms with logOrs too.
 
